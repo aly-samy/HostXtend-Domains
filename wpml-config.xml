@@ -37,4 +37,12 @@
       </key>
     </key>
   </admin-texts>
+      <custom-fields>
+        <custom-field action="translate" attribute="name" value="connectreseller_api_key">
+            <key name="connectreseller_api_key"/>
+        </custom-field>
+    </custom-fields>
+    <admin-texts>
+        <key name="connectreseller_api_key"/>
+    </admin-texts>
 </wpml-config>

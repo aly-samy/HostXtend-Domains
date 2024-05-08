@@ -3,7 +3,7 @@
 /**
  * Class providing whois server informations.
  */
-class WP24_Domain_Check_Whoisservers {
+class HOSTXTEND_DOMAIN_CHECK_Whoisservers {
 
 	/**
 	 * @var array Whois server host and free status string.

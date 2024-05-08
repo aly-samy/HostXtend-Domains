@@ -3,7 +3,7 @@
 /**
  * Class for special whois functions.
  */
-class WP24_Domain_Check_Whoisfunctions {
+class HOSTXTEND_DOMAIN_CHECK_Whoisfunctions {
 
 	/**
 	 * API whois query for .vn.

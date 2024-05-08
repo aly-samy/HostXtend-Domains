@@ -9,7 +9,7 @@ include_once( 'class-whoisservers.php' );
 /**
  * Class for performing whois queries.
  */
-class WP24_Domain_Check_Domaincheck {
+class HOSTXTEND_DOMAIN_CHECK_Domaincheck {
 
 	/**
 	 * @var array Domain Check Settings.
@@ -85,9 +85,9 @@ class WP24_Domain_Check_Domaincheck {
 		else {
 			if ( preg_match( '/' . $status_free . '/i', preg_replace( '/\s\s+|\t/', ' ', $string ) ) )
 				$array_result['status'] = 'available';
-			else if ( preg_match( '/' . WP24_Domain_Check_Whoisservers::get_pattern_invalid() . '/i', preg_replace( '/\s\s+|\t/', ' ', $string ) ) )
+			else if ( preg_match( '/' . HOSTXTEND_DOMAIN_CHECK_Whoisservers::get_pattern_invalid() . '/i', preg_replace( '/\s\s+|\t/', ' ', $string ) ) )
 				$array_result['status'] = 'invalid';
-			else if ( preg_match( '/' . WP24_Domain_Check_Whoisservers::get_pattern_limit() . '/i', $string ) || 'limit exceeded' == strtolower( $string ) )
+			else if ( preg_match( '/' . HOSTXTEND_DOMAIN_CHECK_Whoisservers::get_pattern_limit() . '/i', $string ) || 'limit exceeded' == strtolower( $string ) )
 				$array_result['status'] = 'limit';
 			else {
 				$array_result['status'] = 'registered';
@@ -177,7 +177,7 @@ class WP24_Domain_Check_Domaincheck {
 		}
 		else {
 			$array_result['status'] = 'available_probably';
-			$webwhois = WP24_Domain_Check_Whoisservers::get_webwhois( $tld );
+			$webwhois = HOSTXTEND_DOMAIN_CHECK_Whoisservers::get_webwhois( $tld );
 			if ( $webwhois && $this->options['unsupported']['verify'] )
 				$array_result['text'] = $webwhois;
 		}
@@ -215,7 +215,7 @@ class WP24_Domain_Check_Domaincheck {
 				}
 			}
 
-			$whoisserver = WP24_Domain_Check_Whoisservers::get_whoisserver( $tld );
+			$whoisserver = HOSTXTEND_DOMAIN_CHECK_Whoisservers::get_whoisserver( $tld );
 			if ( ! $whoisserver ) {
 				// get database object
 				global $wpdb;
@@ -238,7 +238,7 @@ class WP24_Domain_Check_Domaincheck {
 				if ( isset( $whoisserver['func'] ) ) {
 					// use special whois function
 					$func = $whoisserver['func'] . '_whois';
-					$func_result = WP24_Domain_Check_Whoisfunctions::$func( $domain, $tld );
+					$func_result = HOSTXTEND_DOMAIN_CHECK_Whoisfunctions::$func( $domain, $tld );
 					$json_result = array_merge( $json_result, $func_result );
 				}
 				else if ( isset( $whoisserver['rdap'] ) ) {
@@ -325,7 +325,7 @@ class WP24_Domain_Check_Domaincheck {
 		/*
 		 * rate limited whois services
 		 */
-		$whoisserver = WP24_Domain_Check_Whoisservers::get_whoisserver( $post_tld );
+		$whoisserver = HOSTXTEND_DOMAIN_CHECK_Whoisservers::get_whoisserver( $post_tld );
 		if ( isset( $whoisserver['limit_group'] ) ) {
 			// if no whois information should be shown, do a quick check
 			if ( ! $this->options['showWhois'] && gethostbyname( $post_domain . '.' . $post_tld . '.' ) != $post_domain . '.' . $post_tld . '.' ) {
@@ -368,7 +368,7 @@ class WP24_Domain_Check_Domaincheck {
 			}
 		}
 
-		$json_data = WP24_Domain_Check_Domaincheck::get_whois_result( $post_domain, $post_tld );
+		$json_data = HOSTXTEND_DOMAIN_CHECK_Domaincheck::get_whois_result( $post_domain, $post_tld );
 
 		if ( isset( $whoisserver['limit_group'] ) ) {
 			if ( 'limit' == $json_data['status'] ) {

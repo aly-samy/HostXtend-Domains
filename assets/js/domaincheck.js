@@ -5,7 +5,7 @@ jQuery( function( $ ) {
  	/**
  	 * Class to init client side javascript and html.
  	 */
-	$.fn.wp24_domain_check = function( settings ) {
+	$.fn.HOSTXTEND_DOMAIN_CHECK = function( settings ) {
 		// append id to use domaincheck multiple times
 		var id = settings.id;
 		var recaptcha;
@@ -195,7 +195,7 @@ jQuery( function( $ ) {
 				if ( 'overlay' == settings.displayType ) {
 					// remove result div and readd it as modal overlay
 					$( '#dc-result-' + id ).remove();
-					var overlay = $( '<div id="dc-result-' + id + '" class="wp24-dc"><span>' + settings.textEmptyField + '</span></div>' );
+					var overlay = $( '<div id="dc-result-' + id + '" class="hostxtend-dc"><span>' + settings.textEmptyField + '</span></div>' );
 					overlay.appendTo( document.body );
 					$( '#dc-result-' + id ).modal();
 				}
@@ -217,7 +217,7 @@ jQuery( function( $ ) {
 				if ( 'overlay' == settings.displayType ) {
 					// remove result div and readd it as modal overlay
 					$( '#dc-result-' + id ).remove();
-					var overlay = $( '<div id="dc-result-' + id + '" class="wp24-dc"><span>' + settings.textInvalidField + '</span></div>' );
+					var overlay = $( '<div id="dc-result-' + id + '" class="hostxtend-dc"><span>' + settings.textInvalidField + '</span></div>' );
 					overlay.appendTo( document.body );
 					$( '#dc-result-' + id ).modal();
 				}
@@ -442,7 +442,7 @@ jQuery( function( $ ) {
 			if ( 'overlay' == settings.displayType ) {
 				// remove result div and readd it as modal overlay
 				$( '#dc-result-' + id ).remove();
-				var overlay = $( '<div id="dc-result-' + id + '" class="wp24-dc">' + htmlResult + '</div>' );
+				var overlay = $( '<div id="dc-result-' + id + '" class="hostxtend-dc">' + htmlResult + '</div>' );
 				overlay.appendTo( document.body );
 				$( '#dc-result-' + id ).modal();
 			}

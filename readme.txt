@@ -1,6 +1,6 @@
-=== WP24 Domain Check ===
+=== hostxtend Domain Check ===
 Contributors: wp24dotorg
-Donate link: https://wp24.org/donate
+Donate link: https://hostxtend.org/donate
 Tags: domain check, domain checker, domain, whois
 Requires at least: 5.0
 Tested up to: 6.5
@@ -13,7 +13,7 @@ Check (whois) domain names for availability. Easy integration via shortcode or w
 
 == Description ==
 
-WP24 Domain Check allows users to check domains if they are free for registration. The responsive form could be easily intregrated via shortcode or widget. Labels and colors are customizeable through the settings page.
+hostxtend Domain Check allows users to check domains if they are free for registration. The responsive form could be easily intregrated via shortcode or widget. Labels and colors are customizeable through the settings page.
 
 **Features**
 
